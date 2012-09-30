@@ -1,0 +1,51 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+#flash {
+	display:none;
+	position:absolute;
+	left:0;
+	right:0;
+}
+
+.sleeve {
+	width:120px;
+	height:170px;
+	margin:5px;
+	text-align:center;
+}
+.card {
+	width:100%;
+	height:100%;
+	border-radius:5px;
+	background-color:rgba(0,0,0,0.1);
+	vertical-align:10px; /* WTF? */
+}
+
+#library {
+	display:inline-block;
+}
+
+.dashed {
+	box-sizing: border-box;
+	border:1px dashed #666;
+	border-radius:5px;
+}
+
+#library .cards {
+	display:none;
+}
+
+.cards {
+	list-style:none;
+	min-height:10px;
+}
+
+.cards .sleeve {
+	display:inline-block;
+}
