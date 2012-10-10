@@ -1,8 +1,7 @@
 require 'dotenv'
 Dotenv.load
-
 require 'active_record'
-require 'uri'
+require 'digest/md5'
  
 db = URI.parse(ENV['DATABASE_URL'])
 

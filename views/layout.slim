@@ -6,15 +6,21 @@ html lang="en"
 		meta content="width=(device-width,)initial-scale=1.0" name="viewport"
 		meta content="Magical" name="description"
 		meta content="JP Hastings-Spital" name="author"
-		link href="/css/bootstrap.css" rel="stylesheet"
 		link href="/css/site.css" rel="stylesheet"
-		link href="/css/bootstrap-responsive.css" rel="stylesheet"
 		/! Le HTML5 shim, for IE6-8 support of HTML5 elements
 		/![if lt IE 9]
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		/! Le fav and touch icons
 		link href="/ico/favicon.ico" rel="shortcut icon"
 		script src="/js/jquery.min.js"
+		script src="/js/jquery.timeago.js"
 		script src="/js/site.js"
 	body
-		==yield
+		ul#auth
+			a href="#"
+				li.title=(@identified) ? 'Connect to:' : 'Log in with:'
+			-@platforms.each_pair do |auth,details|
+				a.provider class="#{auth}#{(details[:linked]) ? ' linked'  : '' }" href="/auth/#{auth}" title=details[:description]
+					li=details[:description]
+		#container
+			==yield

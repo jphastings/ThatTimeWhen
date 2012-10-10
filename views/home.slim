@@ -1,4 +1,23 @@
-#story
-	h1=@story.title
-	time=@story.updated_at
-	p=@story.body
+-if !@story.nil?
+	#story
+		a#add href="#new"
+			span Tell a story
+		section.story.told
+			header
+				-unless @story.anonymous?
+					img.avatar src=@story.user.avatar title=@story.user.display_name
+				h1=@story.title
+				time.when datetime=@story.updated_at.iso8601 =@story.updated_at.strftime("%Y %B %d at %H:%m")
+			p=@story.body
+		form.story#new
+			header
+				input placeholder="Add a title"
+				span.when soon
+			textarea placeholder="Tell me about that time when…"
+#about
+	markdown:
+		A while ago I realised *I like telling stories*.
+
+		I wanted to create a place where stories could be shared, but where it's impossible to skip on to the next and you can't go back and re-read yesterday's. The internet is full of instant gratification, but that time when you met that person or saw that view can never be repeated, it can only be retold and always in a new context.
+
+		The story you see here was picked [almost at random](https://github.com/jphastings/ThatTimeWhen/blob/master/lib/models.rb), you probably won't ever read it again, I hope you enjoy the little slice of someone else's life experience.

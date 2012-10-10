@@ -8,6 +8,8 @@ class CreateStories < ActiveRecord::Migration
       table.boolean :draft, :default => true
       table.boolean :anonymous, :default => true
       table.integer :flagged, :default => 0
+      table.integer :times_seen, :default => 0
+      table.integer :locale, :default => 'en_GB'
 
       table.timestamps
     end
